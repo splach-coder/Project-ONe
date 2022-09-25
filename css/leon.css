@@ -1,4 +1,7 @@
 /*Start Global Variables*/
+:root {
+	--main-color: #10cab7;
+}
 /*End Global VAriables*/
 /*Start Global Rules*/
 * {
@@ -14,22 +17,53 @@ body {
 	margin: 0 auto;
 }
 /*Media Queries*/
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+	.container {
+		width: 500px;
+	}
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
 }
 /*End Global Rules*/
+/*Start Component*/
+.special-heading {
+	color: #ebeced;
+	font-size: 100px;
+	text-align: center;
+	font-weight: 800;
+	letter-spacing: -3px;
+	margin: 0;
+}
+
+.special-heading + p {
+	color: #737373;
+	font-size: 20px;
+	text-align: center;
+	margin: -30px 0 0;
+}
+
+@media (max-width: 767px) {
+	.special-heading {
+		font-size: 60px;
+	}
+
+	.special-heading + p {
+		margin-top: -20px;
+	}
+}
+/*End Component*/
 
 /*Start HEADER*/
 header {
@@ -88,6 +122,7 @@ header .links ul {
 	display: none;
 	top: calc(100% + 15px);
 	border-radius: 5px;
+	z-index: 1;
 }
 
 header .links ul::before {
@@ -115,5 +150,92 @@ header .links ul li a:hover {
 header .links ul li:not(:last-child) a {
 	border-bottom: 1px solid #ddd;
 }
-
 /*End HEADER*/
+/*Start Landing*/
+.landing {
+	background-image: url(../img/lubo-minar-3K6ZkYBj2Xo-unsplash.jpg);
+	background-size: cover;
+	height: calc(100vh - 64px);
+	position: relative;
+}
+
+.landing .intro-text {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	width: 320px;
+	max-width: 100%;
+}
+.landing .intro-text h1 {
+	margin: 0;
+	font-weight: bold;
+	font-size: 50px;
+	color: var(--main-color);
+}
+.landing .intro-text p {
+	font-size: 19px;
+	line-height: 1.8;
+}
+/*End Landing*/
+/*Start features*/
+.features {
+	padding: 0 60px;
+	background-color: #f6f6f6;
+}
+.features .container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 20px;
+}
+.features .feat {
+	padding: 20px;
+	text-align: center;
+}
+.features .feat i {
+	color: var(--main-color);
+}
+.features .feat h3 {
+	font-weight: 800;
+	margin: 30px 0;
+}
+.features .feat p {
+	line-height: 1.8;
+	font-size: 17px;
+	color: #777;
+}
+/*End features*/
+/*Start Services*/
+.services {
+	padding: 0 60px;
+}
+.services .service-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 30px;
+	margin-top: 100px;
+}
+.services .service-content .srv {
+	display: flex;
+	margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+	.services .service-content .srv {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+.services .service-content .srv i {
+	color: var(--main-color);
+	flex-basis: 60px;
+}
+
+.services .service-content .srv .text {
+	flex: 1;
+}
+
+.services .service-content .srv .text h3{
+	margin: 0 0 20px;
+}
+/*End Services*/
