@@ -1,6 +1,7 @@
 /*Start Global Variables*/
 :root {
 	--main-color: #10cab7;
+	--secondary-color: #2c4755;
 }
 /*End Global VAriables*/
 /*Start Global Rules*/
@@ -153,10 +154,11 @@ header .links ul li:not(:last-child) a {
 /*End HEADER*/
 /*Start Landing*/
 .landing {
-	background-image: url(../img/lubo-minar-3K6ZkYBj2Xo-unsplash.jpg);
+	background-image: linear-gradient(black, black), url(../img/lubo-minar-3K6ZkYBj2Xo-unsplash.jpg);
 	background-size: cover;
 	height: calc(100vh - 64px);
 	position: relative;
+	background-blend-mode: saturation;
 }
 
 .landing .intro-text {
@@ -235,7 +237,37 @@ header .links ul li:not(:last-child) a {
 	flex: 1;
 }
 
-.services .service-content .srv .text h3{
+.services .service-content .srv .text h3 {
 	margin: 0 0 20px;
+}
+.services .service-content .srv .text p {
+	color: #444;
+	font-weight: 300;
+	line-height: 1.6;
+}
+.services .service-content .image {
+	text-align: center;
+	position: relative;
+}
+
+.services .service-content .image::before {
+	content: "";
+	position: absolute;
+	background-color: var(--secondary-color);
+	width: 100px;
+	height: calc(100% + 70px);
+	top: -40px;
+	right: 0;
+	z-index: -1;
+}
+
+.services .service-content .image img {
+	width: 260px;
+}
+
+@media (max-width : 1199px) {
+	.image{
+		display: none;
+	}
 }
 /*End Services*/
